@@ -10,7 +10,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "apollo-server": "^2.8.1",
+    "express": "^4.16.4",
+    "graphql": "^14.4.2"
   },
   "engines": {
     "node": "8.x"
