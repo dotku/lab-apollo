@@ -1,21 +1,19 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "apollo-glich-sample",
+  "name": "lab-apollo",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "apollo-server": "^2.8.1",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "graphql": "^14.4.2"
-  },
-  "engines": {
-    "node": "8.x"
+    "graphql": "^14.4.2",
+    "graphql-import": "^0.7.1",
+    "node-fetch": "^2.6.0",
+    "opn": "^6.0.0"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"

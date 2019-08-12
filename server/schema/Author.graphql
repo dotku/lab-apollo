@@ -1,0 +1,8 @@
+type Author {
+  firstName: String,
+  lastName: String,
+}
+
+fragment AuthorFirstName on Author {
+  firstName
+}

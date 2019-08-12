@@ -1,0 +1,32 @@
+# import Author from "./Author.graphql";
+
+# Comments in GraphQL are defined with the hash (#) symbol.
+
+# This "Book" type can be used in other type declarations.
+type Book {
+  id: ID!
+  title: String
+  author: Author
+}
+
+type Post {
+  id: ID!
+  userId: ID!
+  title: String!
+  body: String
+}
+
+# The "Query" type is the root of all GraphQL queries.
+# (A "Mutation" type will be covered later on.)
+type Query {
+  books: [Book]
+}
+
+input AuthorInput {
+  firstName: String
+  lastName: String
+}
+
+type Mutation {
+  book(title: String!, author: AuthorInput): [Book]!
+}
