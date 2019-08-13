@@ -1,12 +1,11 @@
-const fetch = require("node-fetch");
 const axios = require('axios');
 
 async function placeholderPosts() {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const posts = await response.json();
+    const rsp = await axios('https://jsonplaceholder.typicode.com/posts');
+    console.log('data', rsp.data);
 
-    return posts;
+    return rsp.data;
   } catch(e) {
     console.error(e);
   }

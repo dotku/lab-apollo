@@ -13,7 +13,6 @@
     "express": "^4.16.4",
     "graphql": "^14.4.2",
     "graphql-import": "^0.7.1",
-    "node-fetch": "^2.6.0",
     "opn": "^6.0.0"
   },
   "repository": {
