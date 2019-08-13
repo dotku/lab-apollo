@@ -9,7 +9,6 @@ const {ModelPost, ModelBooks} = require('./model');
 
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
-const typeDefs = gql`${importSchema(__dirname + "/schema/schema.graphql")}`;
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
@@ -40,7 +39,7 @@ const resolvers = {
 // responsible for fetching the data for those types.
 const server = new ApolloServer({
   // typeDefs: __dirname + '/schema/schema.graphql',
-  typeDefs,
+  typeDefs: importSchema(__dirname + "/schema/schema.graphql"),
   resolvers
 });
 
