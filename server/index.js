@@ -3,7 +3,7 @@ const { importSchema } = require('graphql-import');
 const { ApolloServer, gql } = require('apollo-server');
 const opn = require('opn');
 const PORT = process.env.port || 3000;
-const {posts, books} = require('./model');
+const {ModelPost, ModelBooks} = require('./model');
 
 // console.log(process.env);
 
@@ -13,18 +13,24 @@ const typeDefs = gql`${importSchema(__dirname + "/schema/schema.graphql")}`;
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
+// console.log('query', ModelPost);
 const resolvers = {
   Query: {
-    books: () => books,
+    books: () => ModelBook.books,
+    posts: () => ModelPost.posts,
   },
   Mutation: {
-    book: (parent, args) => {
-      console.log('data', args);
+    createBook: (parent, args) => {
+      // console.log('data', args);
       books.push({
         ...args,
         id: Date.now().toString().substr(-4)
       });
       return books;
+    },
+    createPost: async (parent, args) => {
+      const rsp = ModelPost.createPost(args);
+      return rsp;
     }
   }
 };
